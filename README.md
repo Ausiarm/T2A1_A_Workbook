@@ -131,29 +131,58 @@
           - The table abides by the 2NF ruleset.
           - The table exclusively contains columns that are non-transitively dependent on the primary key. This step is important as it allows for the segmenting of tables that have too much or confused data within them. When setting up a table, one should be sure to check the nature of the relations of columns. If it does prove true that a column relates to the primary key but only through one of the other columns, it fails to pass this test and should instead be removed to a new table and identified as a foriegn key that links it back to the original table that it was intended for. 
 
-[Source_1](https://edstem.org/courses/4965/lessons/5798/slides/42070)
+[Source_1](https://edstem.org/courses/4965/lessons/5798/slides/42070) <br>
 [Source_2](https://www.essentialsql.com/database-normalization/#Database-Nh-normalization---First-Normal-Form-(1NF))
 
 ## Q10 Relationship Database Model Integrity Aspects
 - Describe the integrity aspects of the relational database model. Your description should include information about the types of data integrity and how they can be enforced in a relational database.
 
 - Integrity 
-      - The integrity rule for tables ensures that data input is valid and protects from anomalies that may lead to incorrect population of data. Each must have a unique identifier that is non-null. This is helpful as the unique identifier will protect ACME from future additions of the same entity as well as limiting the possibility that tables may be populated with null values, if an attempt is made to populate a row in a relational database with a null value, the user will be returned an error. Additionally, due to the structure of the relational database, once a table has been created that contains references to other tables, it will be impossible to delete or remove those referenced tables without recieving an error from the database. This system of checks will prove invaluable as it will stop any potential permanent destruction of data that may intuitively appear unrelated but are critical to the function of other portions of the database. 
+  - Physical Integrity
+    - The first consideration on the part of ACME should be the physical side of their data integrity. This can be simply stated as questions of protection from hazardous weather conditions, power outages, or in the future event of a hacking disruption. While it is true that the previously mentioned risk assessment will provide analysis of the current state of ACME's level of risk for this project, physical integrity of data cannot be overlooked. Industry is moving toward cloud-based solutions for as they highly mitigate the risk for the issues mentioned here and are the official recommendation for ACME on this project. The choice of who to partner with in this regard will be determined once ACME understands the scope of their project and how they would like to secure their data.  
+  - Logical Integrity
+    - The integrity rule for tables will help to ensure that data input for the project is valid and protects from anomalies that may lead to     incorrect interaction with data in the database. The Integrity rule itself can be broken down further into two specific categories which can simplify the process of understanding the value of a relational database while easily identifying why ACME should feel confident in their choice to operate with a relational database. 
+      - The Entity Integrity Rule
+        - Each entity or input must have a unique identifier that is non-null. What this means is that anytime an entity is input into the database, it must have a primary key (this value cannot be null). Along with this, each entity must have a unique primary key. This is helpful as the unique identifier will protect ACME from future additions of the same entity as well as limiting the possibility that tables may be populated with null values, if an attempt is made to populate a row in a relational database with a null value for a primary key, the user will be returned a not-null constraint violation error. This is simply a constraint coded into the relational database structure that will check for null value primary keys and deny their possibility for entry. Another helpful facet of the unique identifier quality of entities is the unique constraint error which will be returned whenever an entity with a primary key that already exists in the table is attempted to be entered once more. 
+      - The Referential Integrity Rule
+        - Additionally, due to the structure of the relational database, once a table has been created that contains references to other tables through the foriegn keys described above, it will be impossible to delete or remove those referenced tables without recieving an foreign key constraint error from the database. This constraint also protects from attempts to log data with references to tables that do not yet exist in the databse, limiting human error in record keeping and saving ACME the need to constantly review databases for interactions of data moving forward and on into the future. 
+      - Domain Integrity 
+        - Domain integrity further reinforces overall database integrity by ensuring that columns within tables are supplied with entity values that meet the requisitie value type, in simple terms, a column that expects integers will only recieve integers rather than being populated with strings or other datatypes. 
+      - User-Defined Integrity
+        - Finally, depending on desires on the ACME for this project in particular, specific user-defined constraints set out before beginning on development of the relational datase can and will be implemented to ensure the highest level of data integrity. 
+- These foundations of data integrity that come with the use of a relational database will prove invaluable to ACME as they will stop any potential hazardous interaction with the database. Moving forward the project's data integrity will be up to industry standards as well as allowing for confidence that the database is populated with real and valuable data that will help drive business decisions moving forward. 
+
+[Source_1](https://edstem.org/courses/4965/lessons/5798/slides/42070) <br>
+[Source_2](https://www.talend.com/resources/what-is-data-integrity/)
 
 ## Q11 Relationship Database Model Manipulative Aspects
-- Describe the manipulative aspects of the relational database model. Your description should include information about the ways in which data is manipulated (added, removed, changed, and retrieved) in a relational database.
+- With the above understanding of structure and integrity in regard to the intended relational database planned for implementation, ACME must finally understand the language that is necessary in order to manipulate data once it is within the tables of the database. DML or Data Manipulation Language is the language that will be used for this project and its relational database. Below is a brief synopsis of each of the available methods in DML that are critical to understanding how to manipulate data within the database.  
+  - Data Manipulation Language
+    - As the databse grows it will be imperative that users interacting with it have an understanding of how to interact and properly manipulate data from within. Here are the commands that will allow for this manipulation: 
+      - Select
+        - Using the select feature, those with access to the database can return a variety of information such as all elements in a column by selecting an attribute. This is the primary method of retrieval for elements desired within tables and can be used in a variety of ways in order to return what is being searched for. 
+        - Example:
+          - SELECT * from items;  --  will return all elements within the items database
+          - The select statement can be further modified with commands such as WHERE. Select * from items WHERE name = ""; will return an element from the items database with the corresponding name indicated in the quotation string. 
+      - Insert
+        - In order to add rows to a table the INSERT command may be called with 'into (table name)' as the suffix and on a new line one specifies the new entities constituent elements with value('','',''); it is important to note that when inserting into a table the integrity rules of relational databases listed above must be observed or else a manipulation error will occur and the input will be denied. 
+        - Example:
+          - INSERT into items <br> 
+            values('ant', 'colonial', '1.00');
+      - Delete
+        - The DELETE method is a similar use case to SELECT but in this case it will remove a selected entity row from a table based off the parameters that it is fed. This method can be very powerful and makes updating the database in multiple places very easy.
+        - Example:
+          - DELETE from items <br>
+          Where name = "ant";
+      - Update  
+        - Instead of adding an entirely new row, perhaps the user simply wants to update a certain attribute of one or more items in a table, this is where the UPDATE method comes in handy and will allow for fast and reliable manipulation of data in a safe and unilateral way.
+        - Example:
+          - Update items <br>
+          SET price = 4.50 WHERE name = "ant";
+  - These commands are just a few examples of the powerful and safe ways to work with the relational database once it is properly created and allow for continuous iteration on the part of ACME as the project grows and increases in scope without.
 
-- Manipulation
-      - As the databse grows it will be imperative that users interacting with it have an understanding of how to interact and properly manipulate data from within. Here are the commands that will allow for this manipulation: 
-        - Select
-          - Using the select feature, those with access to the database can return a variety of information such as all elements in a column by selecting an attribute. 
-        - Insert
-          - In order to add rows to a table the insert command may be called with 'into (table name)' as the suffix.
-        - Delete
-          - Similar functionality to insert but will remove a row from a table.
-        - Update  
-          - Instead of adding a row perhaps the user simply wants to update a certain attribute of all items in a table, this is where the update feature comes in handy and will allow for fast and reliable manipulation of data in a safe and unilateral way. <br>
-      - These commands are powerful and safe ways to work with the relational database once it is properly created and allow for continuous iteration on the part of ACME as the project grows and increases in scope. 
+[Source_1](https://edstem.org/courses/4965/lessons/5798/slides/42070) <br>
+[Source_2](https://dev.to/lmolivera/everything-you-need-to-know-about-relational-databases-3ejl)
 
 ## Q12 Marketplace Website Application Research
 - Conduct research into a marketplace website (app) and answer the following parts:  
