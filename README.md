@@ -222,11 +222,11 @@
 [Source_1](https://edstem.org/courses/4965/lessons/5798/slides/42070) <br>
 [Source_2](https://www.essentialsql.com/database-normalization/#Database-Nh-normalization---First-Normal-Form-(1NF))
 
-## Q10 Relationship Database Model Integrity Aspects
-- This section is a continuation of the relational database discussion beginning in section 9. This section deals with integrity in the relational database model:
+## Section 10 Relationship Database Model Integrity Aspects
+- This section is a continuation of the relational database discussion beginning in section 9. It deals with role of integrity in the relational database model:
   - Integrity 
     - The Integrity rule for tables will help to ensure that data input for the project is valid and protects from anomalies that may lead to  incorrect interaction with, or population of, data in the database. 
-    - This rule can be broken down further into two specific categories which can simplify the process of understanding the value of a relational database. These categories are physical and logical integrity:
+    - This rule can be broken down further into two specific categories which can simplify the process of understanding the value of integrity within a relational database. These categories are physical and logical integrity:
       1. Physical Integrity
         - The first consideration on the part of ACME should be the physical aspect of their data integrity. 
           - This consideration relates to questions of protection from hazardous weather conditions, power outages, or a future event of a hacking disruption. 
@@ -234,75 +234,105 @@
           - The Industry is moving toward cloud-based solutions as they highly mitigate the risk for the issues mentioned here and are the official recommendation for ACME on this project. 
             - The choice of who to partner with in this regard will be determined once ACME understands the scope of their project and how they would like to secure their data.  
       2. Logical Integrity
-        - Logical integrity covers non-physical integrity and thus is broken down even further into 4 sub-groups:
+        - Logical integrity covers non-physical integrity and is further broken down into 4 sub-groups:
           1. The Entity Integrity Rule
             - Each entity or input must have a unique identifier that is non-null. 
-              - What this means is that anytime an entity is input into the database, it must have a primary key (this value cannot be null). 
+              - What this means is that any time an entity is input into the database, it must have a primary key (this value cannot be null). 
               - This is helpful as the unique identifier will protect ACME from future additions of the same entity as well as limiting the possibility that tables may be populated with null values. 
                 - If an attempt is made to populate a row in a relational database with a null value for a primary key, the user will be returned a not-null constraint violation error. 
                   - This is a constraint coded into the relational database structure that will check for null value primary keys and deny their possibility for entry. 
               - Another helpful facet of the unique identifier quality of entities is the unique constraint error which will be returned whenever an entity with a primary key that already exists in the table is attempted to be entered once more. 
           2. The Referential Integrity Rule
-            - Additionally, due to the structure of the relational database, once a table has been created that contains references to other tables through the foriegn keys described above, it will be impossible to delete or remove those referenced tables without recieving an foreign key constraint error from the database. This constraint also protects from attempts to log data with references to tables that do not yet exist in the databse, limiting human error in record keeping and saving ACME the need to constantly review databases for interactions of data moving forward and on into the future. 
+            - Once a table has been created that contains references to other tables through the foriegn keys described above, it will be impossible to delete or remove those referenced tables without recieving an foreign key constraint error from the database. This constraint also protects from attempts to log data with references to tables that do not yet exist in the databse. This will help to limit human error in record keeping and saving ACME the need to constantly review databases for interactions of data moving forward. 
           3. Domain Integrity 
-            - Domain integrity further reinforces overall database integrity by ensuring that columns within tables are supplied with entity values that meet the requisitie value type, in simple terms, a column that expects integers will only recieve integers rather than being populated with strings or other datatypes. 
+            - Domain integrity further reinforces overall database integrity by ensuring that columns within tables are supplied with entity values that meet the requisitie value type.
+              - In other words, a column that expects integers will only recieve integers rather than being populated with strings or other datatypes. 
           4. User-Defined Integrity
-            - Finally, depending on desires on the ACME for this project in particular, specific user-defined constraints set out before beginning on development of the relational datase can and will be implemented to ensure the highest level of data integrity. 
-    - These foundations of data integrity that come with the use of a relational database will prove invaluable to ACME as they will stop any potential hazardous interaction with the database. Moving forward the project's data integrity will be up to industry standards as well as allowing for confidence that the database is populated with real and valuable data that will help drive business decisions moving forward. 
+            - Finally, depending on ACME's desires for this project in particular, specific user-defined constraints set out before beginning on development of the relational datase can and will be implemented to ensure the highest level of data integrity. 
+    - These foundations of data integrity that come with the use of a relational database will prove invaluable to ACME as they will stop any potential hazardous interactions with the database.
+    - Moving forward the project's data integrity will be up to industry standards as well as allow for confidence that the database is populated with real and valuable data that will help drive business decisions. 
 
 [Source_1](https://edstem.org/courses/4965/lessons/5798/slides/42070) <br>
 [Source_2](https://www.talend.com/resources/what-is-data-integrity/)
 
-## Q11 Relationship Database Model Manipulative Aspects
-- With the above understanding of structure and integrity in regard to the intended relational database planned for implementation, ACME must finally understand the language that is necessary in order to manipulate data once it is within the tables of the database. DML or Data Manipulation Language is the language that will be used for this project and its relational database. Below is a brief synopsis of each of the available methods in DML that are critical to understanding how to manipulate data within the database.  
-  - Data Manipulation Language
-    - As the databse grows it will be imperative that users interacting with it have an understanding of how to interact and properly manipulate data from within. Here are the commands that will allow for this manipulation: 
-      - Select
-        - Using the select feature, those with access to the database can return a variety of information such as all elements in a column by selecting an attribute. This is the primary method of retrieval for elements desired within tables and can be used in a variety of ways in order to return what is being searched for. 
-        - Example:
-          - SELECT * from items;  --  will return all elements within the items database
-          - The select statement can be further modified with commands such as WHERE. Select * from items WHERE name = ""; will return an element from the items database with the corresponding name indicated in the quotation string. 
-      - Insert
-        - In order to add rows to a table the INSERT command may be called with 'into (table name)' as the suffix and on a new line one specifies the new entities constituent elements with value('','',''); it is important to note that when inserting into a table the integrity rules of relational databases listed above must be observed or else a manipulation error will occur and the input will be denied. 
-        - Example:
-          - INSERT into items <br> 
-            values('ant', 'colonial', '1.00');
-      - Delete
-        - The DELETE method is a similar use case to SELECT but in this case it will remove a selected entity row from a table based off the parameters that it is fed. This method can be very powerful and makes updating the database in multiple places very easy.
-        - Example:
-          - DELETE from items <br>
-          Where name = "ant";
-      - Update  
-        - Instead of adding an entirely new row, perhaps the user simply wants to update a certain attribute of one or more items in a table, this is where the UPDATE method comes in handy and will allow for fast and reliable manipulation of data in a safe and unilateral way.
-        - Example:
-          - Update items <br>
-          SET price = 4.50 WHERE name = "ant";
-  - These commands are just a few examples of the powerful and safe ways to work with the relational database once it is properly created and allow for continuous iteration on the part of ACME as the project grows and increases in scope without.
+## Section 11 Relationship Database Model Manipulative Aspects
+- This section is a continuation of the relational database discussion beginning in section 9. It deals with role of manipulation in the relational database model:
+  - ACME must understand the language that is necessary in order to manipulate data once it is within the tables of the database. 
+    - DML or Data Manipulation Language is the language that will be used for this project and its relational database. 
+      - Below is a brief synopsis of each of the available methods in DML that are critical to understanding how to manipulate data within the database: 
+        - Data Manipulation Language
+          - As the databse grows it will be imperative that users in charge of maintaining and running it have an understanding of how to interact and properly manipulate data from within. Here are the commands that will allow for this manipulation (note that the table from section nine is copied below for purposes of visual explanation): 
+          - ![relational_table](relational-dbms-example.png)
+            1. Select
+              - Using the select feature, those with access to the database can return a variety of information such as all elements in a column by selecting an attribute. This is the primary method of retrieval for elements desired within tables and can be used in a variety of ways in order to return what is being searched for. 
+              - Example:
+                - SELECT * from users (in the user table example above);  --  will return all elements within the items database
+                - The select statement can be further modified with commands such as WHERE. Select * from users WHERE name = ""; will return an element from the users database with the corresponding name indicated in the quotation string. 
+            2. Insert
+              - In order to add rows to a table, the INSERT command may be called with 'into (table name)' as the suffix and on a new line one specifies the new entities constituent elements with value('','',''); it is important to note that when inserting into a table the integrity rules of relational databases listed above in section 10 must be observed or else a manipulation error will occur and the input will be denied. 
+              - Example:
+                - INSERT into users <br> 
+                  values('ant', 'colonial', '1.00');
+            3. Delete
+              - The DELETE method is a similar use case to SELECT but in this case it will remove a selected entity row from a table based off the parameters that it is fed. This method can be very powerful and makes updating the database in multiple places very easy.
+              - Example:
+                - DELETE from users <br>
+                Where name = "ant";
+            4. Update  
+              - Instead of adding an entirely new row, perhaps the user simply wants to update a certain attribute of one or more items in a table. This is where the UPDATE method comes in handy and will allow for fast and reliable manipulation of data in a safe and unilateral way.
+              - Example:
+                - Update users <br>
+                SET price = 4.50 WHERE name = "ant";
+        - These commands are just a few examples of the powerful and safe ways to work with the relational database once it is properly created. They will allow for continuous iteration on the part of ACME as the project grows and increases in scope. 
 
 [Source_1](https://edstem.org/courses/4965/lessons/5798/slides/42070) <br>
 [Source_2](https://dev.to/lmolivera/everything-you-need-to-know-about-relational-databases-3ejl)
 
-## Q12 Marketplace Website Application Research
-- Conduct research into a marketplace website (app) and answer the following parts: 
-- In order to have a more wholistic understanding of a successful marketplace application currently functioning in the workplace as well as gaining some contextual understanding of what the ACME application can become with time and appropriate work, Airbnb will be used as a means of explaining and exemplifying the possibilities that lie ahead.  
+## Section 12 Marketplace Website Application Research
+- In order to have a more wholistic understanding of a successful marketplace application currently functioning in the workplace, Airbnb will be used as a means of explaining and exemplifying the possibilities that lie ahead.  
   1. List and describe the software used by the app:
       - [Airbnb_Tech_Stack](https://stackshare.io/airbnb/airbnb)
-      - After following the link above it becomes immediately obvious that the techstack involved with Airbnb is beyond the scope of this project. However, it does share some similarities with the ACME project. Github due to is prevelance in the development community as well as its ease of use is used for source control for the website and its ongoing development. This should ensure ACME that using github on this new project is a wise decision and one that is supported by some of the largest marketplace applications currently in operation. In addition, By way of Ruby, Ruby on Rails, Java, and Javascript, Airbnb proves that the use of these languages for the development of the application is both a sound and effective one. Rails, and its convention over configuration philosophy will prove to be an excellent base moving forward for this project as it will remain readable due to its adherence to convention but also up-to-date thanks to Ruby and Ruby on Rails' constant updates due to the need to compete in industry. As mentioned above, Airbnb's tech stack is broad and invloves over 55 tools for the operation of their service. It is important that this project recognizes industry standards and is developed with similar tools if not as many as some of the more grand and ambitious marketplace applications currently in the market. 
+      - After following the link above it becomes immediately obvious that the techstack involved with Airbnb is beyond the scope of this project. However, it does share some similarities with the ACME project. A picture of the tech stack (stack of technologies used to create the application) is included below:
+      - ![Tech_stack](example_tech_stack.png)
+        - Github, due to is prevelance in the development community as well as its ease of use, is used for source control for the website and its ongoing development. 
+          - This should ensure ACME that using github on this new project is a wise decision and one that is supported by some of the largest marketplace applications currently in operation.
+        - By way of Ruby, Ruby on Rails, Java, and Javascript, Airbnb proves that the use of these languages for the development of the application is both a sound and effective one. 
+          - Rails, and its convention over configuration philosophy will prove to be an excellent base moving forward for this project. It will remain understandable to developers due to its adherence to convention but also up-to-date thanks to Ruby and Ruby on Rails' constant updates due to the need to compete in industry. 
+        - As mentioned above, Airbnb's tech stack is broad and invloves over 55 tools for the operation of their service. It is important that this project recognizes industry standards and is developed with similar tools -- if not as many -- as some of the more grand and ambitious marketplace applications currently trending. 
   2. Describe the hardware used to host the app:
-      - It should come as no surprise to ACME that Airbnb is fully cloud based. Like other competitors in industry they realized that scaling would become the largest issue that they would face in the future as the company grew. Why is scalability such a concern? Physical databases will at some point reach their end limit and, thanks to the outline of relational databases above, it will be clear to see that these databases grow to enormous sizes over relatively small periods of time as the application grows in popularity in the market. This line of reasoning is what led the Airbnb team headed by CTO Nathan Blecharczyk to transition the entirety of their cloud based storage to AWS as he stated 2016 saying "AWS is the easy answer for any internet business that wants to scale to the next level". While it is true that sometimes it is good to be different, in this case it would be a prudent decision to follow the leaders of industry and consider cloud based storage of data through a provider rather than hosting phsyical data storage on site. This also proves doubly effective as data integrity will be maintained and not be put in immediate phsyical risk in the case of a natural disaster or emergency. 
+      - It should come as no surprise to ACME that Airbnb is fully cloud based. 
+        - Like other competitors in industry they realized that scaling would become the largest issue that they would face in the future as the company grew. 
+        - Why is scalability such a concern? 
+            - Physical databases will at some point reach their end limit as a function of memory capacity as data packages on the internet increase in size over time. Thanks to the outline of relational databases in sections 9-11, it is clear to see that these databases grow to enormous sizes over relatively small periods of time as the application grows in popularity in the market. 
+            - This line of reasoning is what led the Airbnb team, headed by CTO Nathan Blecharczyk, to transition the entirety of their cloud based storage to AWS. He is quoted in 2016 saying "AWS is the easy answer for any internet business that wants to scale to the next level". 
+            - While it is true that sometimes it is good to be different, in this case it would be a prudent decision to follow the leaders of industry and consider cloud based storage of data through a provider rather than hosting phsyical data storage on site. 
+              - This also proves doubly effective as data integrity will be maintained and not be put in immediate phsyical risk in the case of a natural disaster or emergency. 
       - [Source](https://aws.amazon.com/solutions/case-studies/airbnb/#:~:text=Airbnb%20Grows%20with%20Flexibility%20and%20Responsiveness%20Using%20AWS&text=As%20our%20company%20continued%20to,scale%20to%20the%20next%20level.%E2%80%9D)
-  3. Describe the interaction of technologies within the app
+  3. Describe the interaction of technologies within the app:
      - As far as programming languages are concerned, much like ACME's new project, Airbnb uses Ruby and Javascript, these form the codebase of the application and will do the same for ACME. 
-      - In conjunction with Ruby, Ruby on Rails and its conventions are what will structure the framework of the application just as they do with Airbnb. This is valuable for numerous reasons but moreso than any is the simple fact that RoR has become one of the fastest languages to develop in due to its conventions providing most if not all of the skeletal systems for the codebase -- these can and will be elaborated on but their value in reduction of time that it will take to push this application to market cannot be underestimated. 
-      - React (a Javascript UI library) is used for the creation and presentation of user interfaces that are pleasing to the eye as well as being readily available to the non-tech savvy user. In order to guarantee a bottom line of quality that is well above industry standards, it is recommended that the ACME application also utilize React for UI development. 
-      - Cloud Hosting, Storage, and Database are all handled through the AWS suite which is rapidly taking over the industry due to its ease of use and interconnectability. As mentioned above, this is where the relational databse along with all other forms of data are housed for Airbnb and are critical to its continued function. While it may be seen as risky to rely on another company for hosting services as well as storage and database, AWS has proved time and time again to be the first name to turn to in industry for these needs and as a result is the recommended option in the case of this new ACME project. 
-  4. Describe the way data is structured within the app
-      - Much like the recommendation provided to ACME in this report, Airbnb utilizes a relational database stored in the AWS cloud for the operation of their business. It allows for instantanous access to any of the millions of properties they have available all over the globe while maintaining an ease of access that would simply be unavailable through other non-relational databases. This reliance on relations also allows for high degrees of control over data manipulation which, when at a scale of millions of entities, would be almost impossible with a non-structured databse. This is clearly one of the most reliable options for consideration on the part of ACME as amazon has the capability to front the cost for tremendous amounts of cloud storage, far exceeding that of most other options in industry meaning that the relational database that they start to build will not be in jeopardy of having to be restructured or refactored due to limitations on growth in the future.  
-  5. Identify entities which must be tracked by the app
+      - In conjunction with Ruby, Ruby on Rails (RoR) and its conventions are what will structure the framework of the application just as they do with Airbnb. 
+      - This is important as RoR has become one of the fastest languages to develop in due to its conventions providing most if not all of the skeletal systems for the codebase. These can and will be elaborated on but their value in reduction of time that it will take to push this application to market cannot be underestimated. 
+      - React (a Javascript UI library) is used for the creation and presentation of user interfaces that are pleasing to the eye as well as being readily available to the non-tech savvy user. 
+        - In order to guarantee a bottom line of quality that is well above industry standards, it is recommended that the ACME application also utilize React for UI development. 
+      - Cloud hosting, storage, and databases are all handled through the AWS suite which is rapidly taking over the industry due to its ease of use and interconnectability. 
+        - This is where the relational databse along with all other forms of data are housed for Airbnb and are critical to its continued function. 
+        - While it may be seen as risky to rely on another company for hosting services as well as storage and database, AWS has proved time and time again to be the first name to turn to in industry for these needs and as a result is the recommended option in the case of this new ACME project. 
+  4. Describe the way data is structured within the app:
+      - Airbnb utilizes a relational database stored in the AWS cloud for the operation of their business. It allows for instantanous access to any of the millions of properties they have available all over the globe while maintaining an ease of access that would simply be unavailable through other non-relational databases. 
+        - This reliance on relations also allows for high degrees of control over data manipulation which, when at a scale of millions of entities, would be almost impossible to do safely with a non-structured databse. 
+        - This is clearly one of the most reliable options for consideration on the part of ACME as amazon has the capability to front the cost for tremendous amounts of cloud storage. Amazon's juggernaut status in industry means that the relational database that ACME hosts with them will not be in jeopardy of having to be restructured or refactored due to limitations on growth in the immediate future.  
+  5. Identify entities which must be tracked by the app:
       - There are two main entities that must be tracked through the application; Hosts and Guests. Both of these are also bound to one another through a third entity; listings. 
-  6. Identify the relationships and associations between the entities you have identified in part (e)
-      - The relational database used by Airbnb is protected propriety information however, for the purposes of analysis in order to better prepare ACME for moving forward with their project it will be helpful to breakdown the assumed relationships that comprise that database from number 5. Hosts and Guests have what is called a many to many relationship in the relational databse model. This named relation indicates exactly what it sounds like, both hosts, each with their own unique ID can have many guests and in the same fashion Guests with a unqiue ID can also have many hosts, each over the course of their time using the application. This would be quite problematic due to the continually rising number of connections in the database and that is where the third entity comes into play. Listings as a table is the bridge point between hosts and guests. Both hosts and guests can each connect to the same listing through a foriegn key in the listing table which allows for creation of unique identifying links within the database. Additionally, it allows for unique entities to be constantly reused within the table, helpful for a service such as airbnb which will see hosts renting out the same listing many times to different guests and the same guest renting out many different listings through different hosts. 
-  7. Design a schema using an Entity Relationship Diagram (ERD) appropriate for the database of this website (assuming a relational database model)
+  6. Identify the relationships and associations between the entities mentioned above:
+      - The relational database used by Airbnb is protected propriety information and so this next section is a rough estimation. 
+      - For the purposes of analysis in order to better prepare ACME for moving forward with their project it will be helpful to breakdown the assumed relationships that comprise the database from number 5 above. 
+        - Hosts and Guests have what is called a many to many relationship in the relational databse model. 
+          - This named relation indicates exactly what it sounds like, hosts, each with their own unique ID can have many guests. In the same manner, guests with a unqiue ID can also have many hosts. Each over the course of their time using the application. 
+            - This can become quite problematic due to the continually rising number of connections in the database and that is where the third entity comes into play. 
+        - The listings table is the bridge point between hosts and guests. 
+          - Both hosts and guests can each connect to the same listing through a foriegn key in the listing table which allows for creation of unique identifying links within the database. 
+          - Additionally, it allows for unique entities to be constantly reused within the table, helpful for a service such as airbnb which will see hosts renting out the same listing many times to different guests and the same guest renting out many different listings through different hosts. 
+  7. An Entity Relationship Diagram or ERD is helpful when trying to visualize number 6 above and one has been added here for the sake of clarity:
     - ![Airbnb_ERD](AirbnbERD.png)
 - [Source_1](https://stackshare.io/airbnb/airbnb#stack)
 - [Source_2](https://yalantis.com/blog/the_technology_stack_behind_airbnb/)
