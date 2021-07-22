@@ -1,6 +1,6 @@
  # <div align="center"> T2A1_A_Workbook </div>
 
-## Q1 Architecture of a Rails Application
+## Section 1 Architecture of a Rails Application
 - The architecture of a typical rails application is a combination of the MVC architecture pattern infused with the convention over configuration or coding by convention standards. 
   - The convention over configuration standards protocol sets out what files must be included in a ruby on rails application. This structure is built into the base functionality of rails. A result of this built in functionality is when a new file is generated in the case of ``` rails g controller (controller name) ``` or ``` rails g model (model name) ```. These commands will always be produce the same type of file in the same location. Additionally, they are generated in the same way and located in the exact same location across any application, this constancy is what is referenced when talking about convention over configuration. Thanks to this convention, all aplications created in rails will have the same foundation and be able to be discussed and worked on by professionals who may not have been involved with their immediate creation.   
     - This is incredibly valuable in the workplace as it allows the developer to functionally bypass the setup processes of creation of an app by agreeing to a universal formatting system that can be implemented by generating an app through the rails commands (examples provided above). 
@@ -23,7 +23,7 @@
 - [Source_1](https://ait.instructure.com/courses/3520/pages/mvc?module_item_id=272763)
 - [Source_2](https://towardsdatascience.com/everything-you-need-to-know-about-mvc-architecture-3c827930b4c1)
 
-## Q2 Pros and Cons of a Commonly Used DBMS
+## Section 2 Pros and Cons of a Commonly Used DBMS
 - PostgreSQL is one of a few of the larger and more commonly used Database Management Systems (here on referenced as DBMS's) in the commercial sphere. It is the database that will be focused on below and is very commonly utilized when developing rails applications. PostgreSQL is a relational database which means that data objects or entities stored within are linked to a primary key and can be associated with other tables within the database. 
     - Advantages: 
       1. Open source: Unlike other large DBMS on the market, PostgreSQL is open source and free to the public. This open source foundation has aided with the uptake of postgreSQL across the developing world as amateurs and professionals can make use of it and support its continual evolution in order to keep up with the market.  
@@ -40,7 +40,7 @@
       3. Due to its advantage of being highly compatible among many different languages, PostgreSQL loses out in relation to enhanced speed improvements when compared to something like MySQL which openly accepts its incompatability as a tradeoff for focusing on building a faster DBMS into the future. 
 - With these pros and cons in mind it is safe to say that when operating with data packages smaller than 100 GB, postgreSQL is a great option and should be considered. Beyond this a user or company may be better suited looking for a DBMS that includes data compression functionality. 
 
-## Q3 Implementation of Agile Methodology in Projects
+## Section 3 Implementation of Agile Methodology in Projects
 - At its core, the implementation of agile project management in the workplace involves a progressive and continuous feedback loop between customers and developers. This feedback loop can be seen below thanks to the easy to interpret version included in Jory Mackay's 2018 [article](https://plan.io/blog/what-is-agile-project-management/) on agile implementation: 
   - ![Agile_overall](agile-overall.png)
   - It allows customers who pay for the services of development teams to not only receive constant updates as to the status of their desired product but actual usable applications that can continuously grow based off the customers needs and desires in real time. This approach avoids the most obvious and painful pitfalls of the waterfall method (needing to commit resources entirely to a product that may not even match customer needs). While it is true that the waterfall method dominated the early ecosphere of professional IT services, it has, and is proving to be too rigid for the future of collaborative working. This is due to requirements placed on the customer to have an understanding of future needs that cannot possibly be fully understood until they come into being in the present. This leads to burnout both on the part of the developer and the customer as the developer sets goals that are often unobtainable and the customer often recieves a product that becomes outdated based of current/future needs. 
@@ -76,7 +76,7 @@
 
 
 
-## Q4 Source Control Workflow Overview and Description
+## Section 4 Source Control Workflow Overview and Description
 - The Centralized Workflow: 
   - In the centralized model for a source control workflow there is a single (CENTRAL) repository that serves as the point of interaction between and among individuals working together on a project. All changes are made to the same MAIN branch. In order to make changes, any individual working on that branch needs to fork and clone the main branch to their local machine. Each system for source control will look different in this regard but using github as an example, one need only fork the repository on github and copy the origin link of that repository which can be seen here beside the small clipboard icon: ![github_example](github_example_1.png). 
   - Once this is done, in their terminal they would navigate to the directory they plan to work in and run this command ``` git clone (copied link) ```. Now they have a local version of the forked repository that they can work on indpendently. From here, they would tackle the portions of the project that they have been assigned. 
@@ -93,7 +93,7 @@
 
 [Source](https://www.atlassian.com/git/tutorials/comparing-workflows)
 
-## Q5 Standard Software Testing Process Overview and description
+## Section 5 Standard Software Testing Process Overview and description
 - Provide an overview and description of a standard software testing process (e.g. manual testing)
 - Automated testing: 
   - The form of testing on the rise in popularity in industry due to its constant employment in the agile workflow method, it is testing that is script based and -- once a test case suite is implemented -- it does not require manual input in order to be run successively however many times deemed necessary after inception. Not to be confused as a successor to manual testing, automated testing is valuable in that it allows developers to essentially establish benchmarks for test cases that after proving successful for a certain portion of a development lifecycle, can be then implemented into an automatic scripted version that will allow for the test team to avoid having to constantly return to the same portion of work and instead move on to manually test new and unknown portions of an application in the development lifecycle. Automated testing proves to be robust and valuable in a development lifecycle as a form of maintaining understood conditions as well as aiding organization in the observation of critical and high risk data as it will automatically error out in the event of an anomaly that a manual test might miss. In addition to this it can be used most effectively for tests that prove to be time consuming or those that are incredibly difficult to carry out manually. Due to their popularity, automated testing tools are now being developed so that companies and teams can purchase a functioning suite of testing services that can be readily applied to their needs rather than having to create their own. <br>
@@ -113,81 +113,142 @@
 
 [Source](https://www.guru99.com/automation-testing.html) 
 
-## Q6 Information System Security Discussion and Analysis
+## Section 6 Information System Security Discussion and Analysis
 - In order to respect ACME Corporation's history with compromised security it is essential to apply the CIA triad of information system security (later referred to as infosec) to this project. Through adherence to this triad ACME will be assured that its information systems remain confidential and secure, unmanipulated, and constantly available to those at ACME in charge of maintenance and protection of these vital systems:
   - Confidentiality
     - In respect to the point raised above, it is of utmost importance that ACME Corporations information is handled by those with the appropriate level of clearance to access information. Strict protections of the companies information must be put in place in the form of passwords, authentication, encryption and defense against penetration attacks by malicious third parties attempting to access sensitive information. Staying alert in the field of confidentiality as it relates to information under the perview of ACME will ensure the safety of the companies reputation moving forward as well as its incredibly valuable information and data. 
   - Integrity 
-    - Information on this porject will be handled so as to ensure it is tracked and monitored throughout its lifecycle. The goal here is to be sure that any changes that occur to information systems arre monitored and the use of version control and management software for this purpose will protect ACME into the future. This portion of the triad is doubly effective as adherence to it not only protects ACME from malicious manipulation of data or innocuous mistakes on the part of their own employees but also legally in the form of providing proof that ACME has done all that is necessary and required in order to maintain integrity of their data and information. In addition, maintaining back-ups of information will be required in the event of critical failure so as to protect ACME agaist any bottom line they may encounter. 
+    - Information on this project will be handled so as to ensure it is tracked and monitored throughout its lifecycle. The goal here is to be sure that any changes that occur to information systems are monitored. 
+    - The use of source or version control (discussed above in section 4) and management software for this purpose will protect ACME into the future. 
+      - This portion of the triad is doubly effective as adherence to it protects ACME from malicious manipulation of data as well as innocuous mistakes on the part of their own employees.
+      - legally, ACME will also be covered in the form of providing proof that all has been done that is necessary and required in order to maintain integrity of their user data and information. 
+    - In addition, maintaining back-ups of information will be required in the event of critical failure so as to protect ACME agaist any bottom integrity flaw line they may encounter. 
   - Availability
-    - Once the bounds of confidentiality have been established, it will be necessary for ACME to be constantly aware of how available their information is and to WHO that information is available. Responsibly tracking information access will allow for greater security in the future while building confidence that ACME is capable of protecting information and making sure it is used effectively. Additionally, in line with the integrity arm of the triad, data and information back-ups will be kept and constantly updated in so as to protect ACME against critical failure if the base information system comes under attack. These back-ups will ensure that ACME always has access and their information remains readily available. 
+    - Once the bounds of confidentiality have been established, it will be necessary for ACME to be constantly aware of how available their information is and to who that information is available. 
+    - Responsibly tracking information access will allow for greater security in the future while building confidence that ACME is capable of protecting information and making sure it is used effectively. 
+    - Additionally, in line with the integrity arm of the triad; data and information back-ups will be kept and constantly updated in so as to protect ACME against critical failure if the base information system comes under attack. 
+      - These back-ups will ensure that ACME always has access and their information remains readily available. 
 
-- With these principles in mind, moving forward ACME will be in a position to decide which of these three they would like to focus their efforts on based off the nature of their information. Examples would be medical records, which must above all else remain confidential, placing a high amount of emphasis on the first portion of the triad. Another case would be financial recording institions, which will choose to focus on integrity above all else in order to be assured that data and information records are outside of the possible scope of unintented manipulations that could have highly drastic effects on the beneficiaries of that information. 
+- With these principles in mind, moving forward ACME will be in a position to decide which of these three they would like to focus their efforts on based off the nature of their information. A couple examples of differing types of information security and their place in the triad follow:
+  1. Medical records which must above all else remain confidential, fall under the scope of the first portion of the triad, confidentiality.
+  2. Financial records and those groups or companies who utilize them fall under the scope of the second portion of the triad, integrity. 
+    - Above all else in the case of financial records it is critical that information be immutable from any external source as even the slightest manipulation of data could lead to massive swings in things such as account balances or debts owing. 
 
 - Once the above has been considered, ACME will be in a position to have an information systems security policy established for them which will cater to their specific needs and be sure to include any external parties that may be involved in their information cycle but are not strictly under their direct ownership. 
 
 [Source](https://www.csoonline.com/article/3513899/what-is-information-security-definition-principles-and-jobs.html) 
 
-## Q7 Information and Data Protection Methods
-- Initially a risk assessment will need to be performed in order to determine the state of security protocols previously implemented. Before completely interrupting ACME's system, it is valuable to understand what was previously in place and how it failed. Additionally, this assessment will allow for the determination how data is vulnerable and based off ACME's desired security they will be able to see the potential severity of data breach weighed agaist the probability data breach for their valued data. Once this has been completed ACME will be advised to take the following steps: 
-  - Single sign on authentication in order to both protect user information as well as allow for expedited access to secure information on the part of ACME. Through this method, workers at ACME will be saved from the worries of having to control their own security. Through adoption of single sign on authentication each worker will be able to access their requisite data through use of authentication devices that will generate passwords for them.
-  - Moving forward all levels of access will have built in mandatory and role based access control. In essence, managers will be charged with determining whether or not they must provide access to employees in certain situations based off of the risk assessment of their departments. With this system in place it will be much easier to protect important data by being extremely aware of who has access to it and who does not.  
-  - Encryption systems that will transform data into meaningless and non-correlating strings will be implemented to both protect stored data as well as data as it is passed between portions of the organization on the network. Only by having access to encryption keys will this data be usable. This will allow for safer communication and transmission of data as well as assuring ACME that it's data has not been maliciously interfered with while in transit along the network. 
-  - As best practices indicate, a back-up and recovery plan must be implemented as a failsafe procedure in the case of critical security failures. ACME, in the event of a breach of the network, will be prepared and not devestated by loss of control of their data. This back-up is intended only has a failsafe and as a result will be kept off the network in a secure manner that will only be accessed in times of absolute necessity.   
-  - Finally, an erasure protocol will implemented to ensure that information which must be destroyed is properly removed and can never be accessed once removed. This will further reinforce the data integrity of ACME and increase customer confidence in the safety of their data once it is no longer required.  
-  - Pseudonymization will be recommended as an additional level of security of user data in the event that ACME must handle sensitive information. Through the removal of unique identifiers, information that is sensitive will be randomized and no longer associable with parties involved, thereby offering a further layer of protection if it is desired. 
+## Section 7 Information and Data Protection Methods
+- Initially, a risk assessment will need to be performed in order to determine the state of security protocols previously implemented by ACME. Before completely interrupting ACME's system, it is valuable to understand what was previously in place and how/why it failed. This assessment will allow for the determination of how data is vulnerable and, based off ACME's desired level of security, they will be able to see the potential severity of risk data breach weighed agaist the probability that a data breach may occur with their valued data. Once this has been completed ACME will be advised to take the following steps: 
+  1. Single sign on authentication in order to both protect user information as well as allow for expedited access to secure information on the part of ACME. 
+    - Through this method, workers at ACME will be saved from the worries of having to control their own security. Through adoption of single sign on authentication each worker will be able to access their requisite data through use of authentication devices that will generate unique one-time-use passwords for them.
+  2. Moving forward all levels of access will have built in mandatory and role based access control. 
+    - In essence, managers will be charged with determining whether or not they must provide access to employees in certain situations based off of the risk assessment of their departments. 
+    - With this system in place it will be much easier to protect important data by being extremely aware of who has access to it and who does not.  
+  3. Encryption systems that will transform data into meaningless and non-correlating strings will be implemented to both protect stored data as well as data as it is passed between portions of the organization on the network. 
+    - Only by having access to encryption keys will this data be usable. 
+    - This will allow for safer communication and transmission of data as well as assuring ACME that it's data has not been maliciously interfered with while in transit throughout the network. 
+  4. As best practices indicate, a back-up and recovery plan must be implemented as a failsafe procedure in the case of critical security failures. 
+    - ACME, in the event of a breach of the network, will be prepared and not devestated by loss of control of their data. 
+    - This back-up is intended only has a failsafe and as a result will be kept off the network in a secure manner and location that will only be accessed in times of absolute necessity.   
+  5. Finally, an erasure protocol will be implemented to ensure that information which must be destroyed is properly removed and can never be accessed once removed. 
+    - This will further reinforce the data integrity of ACME and increase customer confidence in the safety of their data once it is no longer required.  
+  6. Pseudonymization is recommended as an additional level of security of user data in the event that ACME must handle sensitive information.
+    - Through the removal of unique identifiers, information that is sensitive will be randomized and no longer associable with parties involved, thereby offering a further layer of protection if it is desired. 
+- If the steps above are followed, ACME can be assured of a new a much higher baseline for the standards of their companies' information and data protection methods. 
 
 [Source_1](https://gdprinformer.com/gdpr-articles/6-essential-data-protection-methods) <br>
 [Source_2](https://looker.com/definitions/data-security)
 
-## Q8 Legality in Relation to User Data
-- Research what your legal obligations are in relation to handling user data and how they can be met for the project
-- First and foremost, ACME will need to determine where they will be operating as each country globally has varying levels of security and privacy regulations in regard to user data. For the purposes of the current ACME project, the Australian Privacy Act 1988 will form the foundation from which ACME can build a proper understanding of its obligations toward its users and their data. the APA 1988 quick reference guide can be found [here](https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-quick-reference/). It is critical that each of the 13 principles of the APA 1988 be observed and respected by ACME moving forward. Failure to do so can and will result in regulatory actions and penalties that may include forcing ACME to cease operation of their marketplace in the event that a breach of principle has occurred. The APA 1988 is a technology-neutral guide and thus can be accurately applied to the project without concern for incompatibility. 
+## Section 8 Legality in Relation to User Data
+- First and foremost, ACME will need to determine where they will be operating as each country globally has varying levels of security and privacy regulations in regard to user data. 
+- For the purposes of the current ACME project, the Australian Privacy Act 1988 will form the foundation from which ACME can build a proper understanding of its obligations toward its users and their data. 
+  - The APA 1988 quick reference guide can be found [here](https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-quick-reference/). 
+  - It is critical that each of the 13 principles of the APA 1988 be observed and respected by ACME moving forward. Failure to do so can and will result in regulatory actions and penalties that may include forcing ACME to cease operation of their marketplace in the event that a breach of principle has occurred. 
+  - The APA 1988 is a technology-neutral guide and thus can be accurately applied to the project without concern for incompatibility. 
 - In addition to the legislation laid out previously, there are subsequent policies that have resulted from later legislation that must be observed:
   - Both the DNCRA 2006 and the Spam Act 2003 set out the limits of direct marketing activities of companies in Australia. 
-  - At the state and territory level there are varying acts that have been placed in order to protect the safety of user information and data. Depending on which state the ACME project is registered in they will be advised on the relevant acts that must be observed and accounted for. 
+  - At the state and territory level there are varying acts that have been placed in order to protect the safety of user information and data.
+    - Depending on which state the ACME project is registered in they will be advised on the relevant acts that must be observed and accounted for.
+- Abiding by the legal codes above, the ACME marketplace in development will be sure to meet the legal obligations of a company interacting with users on the internet as set out by the Australian government and its individual state legislatures. 
 
 [Source_1](https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-quick-reference/) <br>
 [Source_2](https://www.oaic.gov.au/privacy/australian-privacy-principles)
 
-## Q9 Relationship Database Model Structural Aspects
-- As per ACME desires, a relational database will be utilized in order to store data that will be used in conjunction with this application. The relational database: 
-  - Talk about DBML (database mark-up language)
-  - Is one in which data is organized into a table of columns and rows. This table represents the relations of the information of our database. This particular structure defines data by using these rows and columns to order relations in data that provide information to the user. A simple structure, the columns are the attributes of the table and the rows are where individual entries or records are placed. Thus each entity will contain each attribute of the table as desired by the designer. This relationship allows for indexing of an incredibly diverse amount of information while keeping that information succinct and easily accessible. 
-  - There are three main features that define the relational model:
-    - Structure, Integrity, and Manipulation
-      - Focusing on structure and as stated above, the relational model sets up a database in which columns lay out the attributes of the data. Attributes are universal and should be able to be applicable to any entity that is intended to be placed in the table. A good example would be an email address or a phone number. Both of these will apply equally to all entities that are logged in the table. It is important to be sure to be explicit in attribute formation and be sure to be as simple as possible. Creating a column such as address could lead to errors as it will introduce the possibility of entering multiple values at the level of the entity into a column which should always ideally have one element within it per entity associated. What are these entities? Rows are the populating entities that consist of a combination of the different attributes which form the columns of the table. The beginning of each row will contain a candidate key which is the unique identifier of that entity and makes finding it within the database simple and easy. The Primary key of the table is the how the table's overall identity is declared and usually consists of one column (but can rarely be more). Finally, each table can also include a foreign key which serves as a row in one table while serving as a column in another. With foreign keys it becomes possible to separate related data into multiple tables in order to avoid anomalies that can arise in databases through deletion of certain properties accidentally.
-      - In addition to the basic structural components of the relational database model, there are 3 sets of rules that are considered standard practice and will help anyone relational database to become normalized, concise, and clear while being continually usable into the future. These rules are known as the 3 normal forms:
-        1. 1NF
-          - When data is in a database table, that data is stored in rows and columns. One or more of these columns will identify the table and is known as the primary key -- this primary key is where each entity will have a unique identifier that will make it recognizable from any other entity regardless of nature of entries. In addition records of that lie in a column must be of the same type. 
-          - each column will have atomic values.
-        2. 2NF
-          - The table abides by the 1NF ruleset.
-          - All the columns in the table that are non-key are dependent on the primary key (column) of the table. In order to meet this standard each column must be related to the primary key -- in other words, there cannot be columns that exist in the table that contain data that is not pertinent to the overall purpose of the table which is typically defined by the primary key as their data would be superfluous and of no use to the relational database due to their lacking of relation to any main identity in the database. 
-        3. 3NF
-          - The table abides by the 2NF ruleset.
-          - The table exclusively contains columns that are non-transitively dependent on the primary key. This step is important as it allows for the segmenting of tables that have too much or confused data within them. When setting up a table, one should be sure to check the nature of the relations of columns. If it does prove true that a column relates to the primary key but only through one of the other columns, it fails to pass this test and should instead be removed to a new table and identified as a foriegn key that links it back to the original table that it was intended for. 
+## Section 9 Relationship Database Model Structural Aspects
+- As per ACME desires, a relational database will be utilized in order to store the data that will be used in conjunction with this application.
+- The relational database: 
+  - A database in which data is organized into a table of columns and rows. This table represents the relational aspect of the information of our database. 
+    - This particular structure defines data by using these rows and columns to order data that provide information to the user. 
+    - The columns are the attributes of the table and the rows are where individual entries or records are placed. 
+    - Thus each entity will contain each attribute of the table as desired by the designer. 
+    - These basic relational rules allow for indexing of an incredibly diverse amount of information while keeping that information succinct and easily accessible. 
+  - Example of a table in the PostgreSQL DBMS from launchschool's [guide](https://launchschool.com/books/sql_first_edition/read/multi_tables) for beginners (as discussed in section 2, postgreSQL is a relational database): 
+    - ![relational_table](relational-dbms-example.png)
+
+<br>
+
+  - There are three main features that define the relational model, this section deals with structure exclusively:
+    - Structure
+      1. Structure 
+        - As stated above, the relational model sets up a database in which columns lay out the attributes of the data. 
+        - Attributes are universal and should be able to be applicable to any entity that is intended to be placed in the table. 
+        - A good example would be an email address or a phone number. Both of these will apply equally to all entities that are logged in the table. 
+        - It is important to be sure to be explicit in attribute formation and be sure to be as simple as possible. 
+          - Creating a column such as address could lead to errors as it will introduce the possibility of entering multiple values at the level of the entity into a column which should always ideally have one element within it per entity associated. 
+            - What are these entities? 
+              - Rows are the populating entities that consist of a combination of the different attributes which form the columns of the table.
+              - The beginning of each row will contain a candidate key which is the unique identifier of that entity and makes finding it within the database simple and easy. 
+              - The Primary key of the table is the how the table's overall identity is declared and usually consists of one column (but can rarely be more). 
+              - Finally, each table can also include a foreign key which serves as a row in one table while serving as a column in another. 
+                - With foreign keys it becomes possible to separate related data into multiple tables in order to avoid anomalies that can arise in databases through deletion of certain properties accidentally.
+        - There are 3 sets of rules that are considered standard practice when stucturing a databse. These will help any relational database to become normalized, concise, and clear while being continually usable into the future. These rules are known as the 3 normal forms:
+          1. 1NF
+            - When data is in a database table, that data is stored in rows and columns. One or more of these columns will identify the table and is known as the primary key. This primary key is where each entity will have a unique identifier that will make it recognizable from any other entity regardless of nature or number of entries. 
+            - In addition records that lie in a column must be of the same type. 
+            - each column will have atomic values.
+          2. 2NF
+            - The table abides by the 1NF ruleset.
+            - All the columns in the table that are non-key are dependent on the primary key (column) of the table. 
+              - In order to meet this standard each column must be related to the primary key. 
+              - There cannot be columns that exist in the table that contain data that is not pertinent to the overall purpose of the table. Their data would be superfluous and of no use to the relational database due to their lacking of relation to any main identity in the database. 
+          3. 3NF
+            - The table abides by the 2NF ruleset.
+            - The table exclusively contains columns that are non-transitively dependent on the primary key. 
+              - This step is important as it allows for the segmenting of tables that have too much or confused data within them. 
+              - When setting up a table, one should be sure to check the nature of the relations of columns. 
+               - If it does prove true that a column relates to the primary key but only through one of the other columns, it fails to pass this test. It should instead be removed to a new table and identified as a foriegn key that links it back to the original table that it was placed in. 
 
 [Source_1](https://edstem.org/courses/4965/lessons/5798/slides/42070) <br>
 [Source_2](https://www.essentialsql.com/database-normalization/#Database-Nh-normalization---First-Normal-Form-(1NF))
 
 ## Q10 Relationship Database Model Integrity Aspects
-- Describe the integrity aspects of the relational database model. Your description should include information about the types of data integrity and how they can be enforced in a relational database.
-
-- Integrity 
-  - Physical Integrity
-    - The first consideration on the part of ACME should be the physical side of their data integrity. This can be simply stated as questions of protection from hazardous weather conditions, power outages, or in the future event of a hacking disruption. While it is true that the previously mentioned risk assessment will provide analysis of the current state of ACME's level of risk for this project, physical integrity of data cannot be overlooked. Industry is moving toward cloud-based solutions for as they highly mitigate the risk for the issues mentioned here and are the official recommendation for ACME on this project. The choice of who to partner with in this regard will be determined once ACME understands the scope of their project and how they would like to secure their data.  
-  - Logical Integrity
-    - The integrity rule for tables will help to ensure that data input for the project is valid and protects from anomalies that may lead to     incorrect interaction with data in the database. The Integrity rule itself can be broken down further into two specific categories which can simplify the process of understanding the value of a relational database while easily identifying why ACME should feel confident in their choice to operate with a relational database. 
-      - The Entity Integrity Rule
-        - Each entity or input must have a unique identifier that is non-null. What this means is that anytime an entity is input into the database, it must have a primary key (this value cannot be null). Along with this, each entity must have a unique primary key. This is helpful as the unique identifier will protect ACME from future additions of the same entity as well as limiting the possibility that tables may be populated with null values, if an attempt is made to populate a row in a relational database with a null value for a primary key, the user will be returned a not-null constraint violation error. This is simply a constraint coded into the relational database structure that will check for null value primary keys and deny their possibility for entry. Another helpful facet of the unique identifier quality of entities is the unique constraint error which will be returned whenever an entity with a primary key that already exists in the table is attempted to be entered once more. 
-      - The Referential Integrity Rule
-        - Additionally, due to the structure of the relational database, once a table has been created that contains references to other tables through the foriegn keys described above, it will be impossible to delete or remove those referenced tables without recieving an foreign key constraint error from the database. This constraint also protects from attempts to log data with references to tables that do not yet exist in the databse, limiting human error in record keeping and saving ACME the need to constantly review databases for interactions of data moving forward and on into the future. 
-      - Domain Integrity 
-        - Domain integrity further reinforces overall database integrity by ensuring that columns within tables are supplied with entity values that meet the requisitie value type, in simple terms, a column that expects integers will only recieve integers rather than being populated with strings or other datatypes. 
-      - User-Defined Integrity
-        - Finally, depending on desires on the ACME for this project in particular, specific user-defined constraints set out before beginning on development of the relational datase can and will be implemented to ensure the highest level of data integrity. 
-- These foundations of data integrity that come with the use of a relational database will prove invaluable to ACME as they will stop any potential hazardous interaction with the database. Moving forward the project's data integrity will be up to industry standards as well as allowing for confidence that the database is populated with real and valuable data that will help drive business decisions moving forward. 
+- This section is a continuation of the relational database discussion beginning in section 9. This section deals with integrity in the relational database model:
+  - Integrity 
+    - The Integrity rule for tables will help to ensure that data input for the project is valid and protects from anomalies that may lead to  incorrect interaction with, or population of, data in the database. 
+    - This rule can be broken down further into two specific categories which can simplify the process of understanding the value of a relational database. These categories are physical and logical integrity:
+      1. Physical Integrity
+        - The first consideration on the part of ACME should be the physical aspect of their data integrity. 
+          - This consideration relates to questions of protection from hazardous weather conditions, power outages, or a future event of a hacking disruption. 
+          - While it is true that the previously mentioned risk assessment from section 7 will provide analysis of the current state of ACME's level of risk for this project, physical integrity of data cannot be overlooked. 
+          - The Industry is moving toward cloud-based solutions as they highly mitigate the risk for the issues mentioned here and are the official recommendation for ACME on this project. 
+            - The choice of who to partner with in this regard will be determined once ACME understands the scope of their project and how they would like to secure their data.  
+      2. Logical Integrity
+        - Logical integrity covers non-physical integrity and thus is broken down even further into 4 sub-groups:
+          1. The Entity Integrity Rule
+            - Each entity or input must have a unique identifier that is non-null. 
+              - What this means is that anytime an entity is input into the database, it must have a primary key (this value cannot be null). 
+              - This is helpful as the unique identifier will protect ACME from future additions of the same entity as well as limiting the possibility that tables may be populated with null values. 
+                - If an attempt is made to populate a row in a relational database with a null value for a primary key, the user will be returned a not-null constraint violation error. 
+                  - This is a constraint coded into the relational database structure that will check for null value primary keys and deny their possibility for entry. 
+              - Another helpful facet of the unique identifier quality of entities is the unique constraint error which will be returned whenever an entity with a primary key that already exists in the table is attempted to be entered once more. 
+          2. The Referential Integrity Rule
+            - Additionally, due to the structure of the relational database, once a table has been created that contains references to other tables through the foriegn keys described above, it will be impossible to delete or remove those referenced tables without recieving an foreign key constraint error from the database. This constraint also protects from attempts to log data with references to tables that do not yet exist in the databse, limiting human error in record keeping and saving ACME the need to constantly review databases for interactions of data moving forward and on into the future. 
+          3. Domain Integrity 
+            - Domain integrity further reinforces overall database integrity by ensuring that columns within tables are supplied with entity values that meet the requisitie value type, in simple terms, a column that expects integers will only recieve integers rather than being populated with strings or other datatypes. 
+          4. User-Defined Integrity
+            - Finally, depending on desires on the ACME for this project in particular, specific user-defined constraints set out before beginning on development of the relational datase can and will be implemented to ensure the highest level of data integrity. 
+    - These foundations of data integrity that come with the use of a relational database will prove invaluable to ACME as they will stop any potential hazardous interaction with the database. Moving forward the project's data integrity will be up to industry standards as well as allowing for confidence that the database is populated with real and valuable data that will help drive business decisions moving forward. 
 
 [Source_1](https://edstem.org/courses/4965/lessons/5798/slides/42070) <br>
 [Source_2](https://www.talend.com/resources/what-is-data-integrity/)
